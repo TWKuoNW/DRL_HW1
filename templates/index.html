@@ -4,16 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HW1-1 Grid Map Development</title>
-    <link rel="stylesheet" href="static/style.css">
-    <!-- Load Google Fonts -->
+    <title>HW1-1 to HW1-3 Grid Map Development</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="container">
         <header>
-            <h1>HW1-1 網格地圖開發</h1>
+            <h1>DRL Grid Map (HW1-1 to HW1-3)</h1>
         </header>
 
         <section class="controls">
@@ -24,17 +23,23 @@
 
         <section class="grid-section">
             <h2 id="grid-title">5 x 5 Square:</h2>
-            <p class="instruction">
+            <p class="instruction" id="instruction-text">
                 Click on a cell to set up the start grid as green, the end grid as red, and remaining obstacles as gray.
             </p>
             <div id="grid-container" class="grid-container"></div>
+
+            <div class="action-panel" id="action-panel" style="display: none; gap: 10px; margin: 20px 0;">
+                <button id="btn-hw1-2" class="action-btn">HW1-2: Evaluate Random Policy</button>
+                <button id="btn-hw1-3" class="action-btn">HW1-3: Value Iteration</button>
+            </div>
+
             <div class="status-panel">
                 <span class="status-indicator">Please click to select Start Cell (Green)</span>
             </div>
         </section>
     </div>
 
-    <script src="static/script.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 
 </html>
